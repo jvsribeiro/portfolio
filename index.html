@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>João Ribeiro Desenvolvedor</title>
+  <meta name="description" content="Portfólio de João Ribeiro Desenvolvedor Full Stack. Projetos, habilidades e contato."/>
+  <meta name="color-scheme" content="light dark">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" rel="stylesheet">
+   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%232563eb'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='Inter,Arial' font-size='28' fill='white'%3EJR%3C/text%3E%3C/svg%3E">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="assets/js/tw-config.js"></script>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="bg-white text-zinc-800 dark:bg-zinc-950 dark:text-zinc-100 antialiased">
+  <!-- Header -->
+  <header class="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:supports-[backdrop-filter]:bg-zinc-950/60 border-b border-zinc-200/60 dark:border-zinc-800/60">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex items-center justify-between h-16">
+        <a href="#" class="text-xl font-extrabold tracking-tight">JR Dev</a>
+        <nav class="hidden md:flex items-center gap-6 text-sm">
+           <a href="#sobre" class="hover:opacity-80 link-slide" data-i18n="nav.sobre">Sobre</a>
+           <a href="#habilidades" class="hover:opacity-80 link-slide" data-i18n="nav.habilidades">Habilidades</a>
+           <a href="#projetos" class="hover:opacity-80 link-slide" data-i18n="nav.projetos">Projetos</a>
+           <a href="#experiencia" class="hover:opacity-80 link-slide" data-i18n="nav.experiencia">Experiência</a>
+           <a href="#contato" class="hover:opacity-80 link-slide" data-i18n="nav.contato">Contato</a>
+        </nav>
+        <div class="flex items-center gap-2">
+          <button id="btnLang" class="inline-flex items-center justify-center gap-2 px-3 h-10 rounded-xl border border-zinc-200 dark:border-zinc-800 hover:bg-zinc-50 dark:hover:bg-zinc-900 text-sm" aria-label="Selecionar idioma">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 16" width="20" height="14" aria-hidden="true">
+              <rect width="24" height="16" fill="#009B3A"/>
+              <polygon points="12,2 22,8 12,14 2,8" fill="#FFDF00"/>
+              <circle cx="12" cy="8" r="4" fill="#002776"/>
+            </svg>
+            <span>PT</span>
+          </button>
+          <button id="btnMenu" class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-xl border border-zinc-200 dark:border-zinc-800" aria-controls="navMobile" aria-expanded="false" aria-label="Abrir menu">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+        </div>
+      </div>
+      <nav id="navMobile" class="md:hidden hidden fixed inset-0 z-[60]">
+        <div id="navOverlay" class="absolute inset-0 bg-white/40 dark:bg-zinc-900/30 backdrop-blur"></div>
+        <div class="relative mx-4 mt-20 rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white/60 dark:bg-zinc-900/60 backdrop-blur p-4 shadow-soft">
+           <div class="grid gap-2 text-base">
+             <a href="#sobre" class="py-3 px-3 rounded-lg hover:bg-zinc-50 dark:hover:bg-zinc-900 link-slide" data-close="true" data-i18n="nav.sobre">Sobre</a>
+             <a href="#habilidades" class="py-3 px-3 rounded-lg hover:bg-zinc-50 dark:hover:bg-zinc-900 link-slide" data-close="true" data-i18n="nav.habilidades">Habilidades</a>
+             <a href="#projetos" class="py-3 px-3 rounded-lg hover:bg-zinc-50 dark:hover:bg-zinc-900 link-slide" data-close="true" data-i18n="nav.projetos">Projetos</a>
+             <a href="#experiencia" class="py-3 px-3 rounded-lg hover:bg-zinc-50 dark:hover:bg-zinc-900 link-slide" data-close="true" data-i18n="nav.experiencia">Experiência</a>
+             <a href="#contato" class="py-3 px-3 rounded-lg hover:bg-zinc-50 dark:hover:bg-zinc-900 link-slide" data-close="true" data-i18n="nav.contato">Contato</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative">
+    <div class="max-w-6xl mx-auto px-4 py-24 sm:py-28 md:py-32">
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <h1 class="text-4xl/tight sm:text-5xl/tight font-extrabold">
+            <span class="block" data-i18n="hero.hello">Olá, sou João Ribeiro</span>
+            <span id="typeTarget" class="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-zinc-900 via-zinc-700 to-zinc-400 dark:from-white dark:via-zinc-200 dark:to-zinc-400 caret" aria-live="polite">Desenvolvedor Full Stack</span>
+          </h1>
+          <p class="mt-6 text-zinc-600 dark:text-zinc-300 max-w-prose" data-i18n="hero.desc">Fundador da NeoTech Soluções, sou desenvolvedor full stack com especialização em JavaScript e base em Python. Tenho ampla experiência na criação de interfaces modernas utilizando Tailwind e Bootstrap, sempre com foco em performance, segurança e experiência do usuário (UX). Apaixonado por tecnologia e inovação, busco desenvolver soluções inteligentes que unam eficiência e design.</p>
+          <div class="mt-8 flex flex-wrap items-center gap-3">
+            <a href="https://github.com/jvsribeiro" target="_blank" class="btn">
+              <i class="devicon-github-original text-base" aria-hidden="true"></i>
+              <span data-i18n="hero.btn.github">GitHub</span>
+            </a>
+            <a href="https://www.linkedin.com/in/joao-vitor-ribeiro-2a40511b7/" target="_blank" class="btn">
+              <i class="devicon-linkedin-plain text-sky-600 text-base" aria-hidden="true"></i>
+              <span data-i18n="hero.btn.linkedin">LinkedIn</span>
+            </a>
+            <a href="mailto:joaovitorr0508@gmail.com" class="btn btn-primary">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="btn-icon"><path d="M3 7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Z"/><path d="m3 7 9 6 9-6"/></svg>
+              <span data-i18n="hero.btn.email">E-mail</span>
+            </a>
+          </div>
+        </div>
+        <div class="relative">
+          <div id="avatarFrame" class="relative mx-auto w-64 h-64 sm:w-72 sm:h-72 rounded-full overflow-hidden shadow-soft ring-1 ring-black/5 dark:ring-white/10">
+            <!-- Substitua src por sua foto: /img/perfil.jpg -->
+            <img src="assets/img/foto.jpeg" alt="Foto de João Ribeiro" class="w-full h-full object-cover scale-100 will-change-transform" id="avatar">
+          </div>
+          <div class="absolute -z-10 inset-0 blur-3xl opacity-40 dark:opacity-30" aria-hidden="true">
+            <div class="w-64 h-64 md:w-80 md:h-80 bg-gradient-to-tr from-fuchsia-500/30 via-sky-500/30 to-emerald-500/30 rounded-full mx-auto translate-x-8 translate-y-6"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Removido: botões duplicados para manter um padrão único -->
+    </div>
+  </section>
+
+  <!-- Sobre -->
+  <section id="sobre" class="border-t border-zinc-200/60 dark:border-zinc-800/60">
+    <div class="max-w-6xl mx-auto px-4 py-16 md:py-20">
+      <h2 class="text-2xl font-bold text-center" data-i18n="sobre.title">Sobre mim</h2>
+      <p class="mt-4 text-zinc-600 dark:text-zinc-300 max-w-3xl mx-auto text-center" data-i18n="sobre.p1">Sou de Bebedouro, São Paulo. Desenvolvedor Full Stack e fundador da NeoTech Soluções, com experiência em desenvolvimento web. Estudei minha vida inteira em Bebedouro, sou graduado em Sistemas de Informação pela Unifafibe e estou finalizando a pós-graduação em Desenvolvimento de Sistemas Web pelo Instituto Federal de Barretos.</p>
+      <p class="mt-3 text-zinc-600 dark:text-zinc-300 max-w-3xl mx-auto text-center" data-i18n="sobre.p2">Tenho forte conhecimento em scripts JS e BPMs e estou me especializando em Laravel. Na parte de UI, estudo Bootstrap e TypeScript; trabalho com bancos de dados, desenvolvo integrações e possuo sólido conhecimento em inteligência artificial. Em mais de quatro anos de experiência, domino: HTML, CSS, JavaScript, PHP, Laravel, Python, Node, Docker e MySQL.</p>
+      <div class="mt-8">
+        <h3 class="text-lg font-semibold text-center" data-i18n="sobre.techs">Tecnologias que utilizo</h3>
+        <div class="mt-4 grid grid-cols-3 sm:grid-cols-6 gap-6 justify-items-center">
+          <div class="flex flex-col items-center gap-2" aria-label="HTML5">
+            <span class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-zinc-100 dark:bg-zinc-900 ring-1 ring-zinc-200 dark:ring-zinc-800 shadow-sm transition-transform duration-200 hover:scale-105">
+              <i class="devicon-html5-plain colored text-3xl" aria-hidden="true"></i>
+            </span>
+            <span class="text-xs text-zinc-600 dark:text-zinc-300">HTML5</span>
+          </div>
+          <div class="flex flex-col items-center gap-2" aria-label="CSS3">
+            <span class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-zinc-100 dark:bg-zinc-900 ring-1 ring-zinc-200 dark:ring-zinc-800 shadow-sm transition-transform duration-200 hover:scale-105">
+              <i class="devicon-css3-plain colored text-3xl" aria-hidden="true"></i>
+            </span>
+            <span class="text-xs text-zinc-600 dark:text-zinc-300">CSS3</span>
+          </div>
+          <div class="flex flex-col items-center gap-2" aria-label="JavaScript">
+            <span class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-zinc-100 dark:bg-zinc-900 ring-1 ring-zinc-200 dark:ring-zinc-800 shadow-sm transition-transform duration-200 hover:scale-105">
+              <i class="devicon-javascript-plain colored text-3xl" aria-hidden="true"></i>
+            </span>
+            <span class="text-xs text-zinc-600 dark:text-zinc-300">JavaScript</span>
+          </div>
+          <div class="flex flex-col items-center gap-2" aria-label="PHP">
+            <span class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-zinc-100 dark:bg-zinc-900 ring-1 ring-zinc-200 dark:ring-zinc-800 shadow-sm transition-transform duration-200 hover:scale-105">
+              <i class="devicon-php-plain colored text-3xl" aria-hidden="true"></i>
+            </span>
+            <span class="text-xs text-zinc-600 dark:text-zinc-300">PHP</span>
+          </div>
+          <div class="flex flex-col items-center gap-2" aria-label="Python">
+            <span class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-zinc-100 dark:bg-zinc-900 ring-1 ring-zinc-200 dark:ring-zinc-800 shadow-sm transition-transform duration-200 hover:scale-105">
+              <i class="devicon-python-plain colored text-3xl" aria-hidden="true"></i>
+            </span>
+            <span class="text-xs text-zinc-600 dark:text-zinc-300">Python</span>
+          </div>
+          <div class="flex flex-col items-center gap-2" aria-label="MySQL">
+            <span class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-zinc-100 dark:bg-zinc-900 ring-1 ring-zinc-200 dark:ring-zinc-800 shadow-sm transition-transform duration-200 hover:scale-105">
+              <i class="devicon-mysql-plain colored text-3xl" aria-hidden="true"></i>
+            </span>
+            <span class="text-xs text-zinc-600 dark:text-zinc-300">MySQL</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Habilidades -->
+  <section id="habilidades" class="border-t border-zinc-200/60 dark:border-zinc-800/60">
+    <div class="max-w-6xl mx-auto px-4 py-16 md:py-20">
+      <h2 class="text-2xl font-bold" data-i18n="skills.title">Habilidades</h2>
+      <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="p-5 rounded-2xl border border-zinc-200 dark:border-zinc-800">
+          <h3 class="font-semibold" data-i18n="skills.fullstack.title">Full Stack</h3>
+          <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-300" data-i18n="skills.fullstack.desc">Desenvolvimento ponta a ponta, integrações, APIs, testes e deploy.</p>
+        </div>
+        <div class="p-5 rounded-2xl border border-zinc-200 dark:border-zinc-800">
+          <h3 class="font-semibold" data-i18n="skills.frontend.title">Front-end</h3>
+          <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-300" data-i18n="skills.frontend.desc">HTML5, CSS3, Tailwind CSS; foco em performance, acessibilidade e UX.</p>
+        </div>
+        <div class="p-5 rounded-2xl border border-zinc-200 dark:border-zinc-800">
+          <h3 class="font-semibold" data-i18n="skills.backend.title">Back-end</h3>
+          <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-300" data-i18n="skills.backend.desc">Python, FastAPI e PHP; APIs REST, autenticação e boas práticas.</p>
+        </div>
+        <div class="p-5 rounded-2xl border border-zinc-200 dark:border-zinc-800">
+          <h3 class="font-semibold" data-i18n="skills.data.title">Data</h3>
+          <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-300" data-i18n="skills.data.desc">Bancos de dados, modelagem e MySQL; consultas eficientes e integrações.</p>
+        </div>
+        <div class="p-5 rounded-2xl border border-zinc-200 dark:border-zinc-800">
+          <h3 class="font-semibold" data-i18n="skills.ai.title">Inteligência Artificial</h3>
+          <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-300" data-i18n="skills.ai.desc">Aplicações com IA e automações; integração de serviços e modelos.</p>
+        </div>
+        <div class="p-5 rounded-2xl border border-zinc-200 dark:border-zinc-800">
+          <h3 class="font-semibold" data-i18n="skills.soft.title">Soft Skills — Comunicação</h3>
+          <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-300" data-i18n="skills.soft.desc">Demonstro comunicação assertiva e empática, capaz de adaptar a mensagem ao público e ao contexto. Valorizo a colaboração entre equipes multidisciplinares, construindo relações de confiança e promovendo um ambiente de trabalho produtivo e leve. Tenho facilidade em conectar pessoas e alinhar objetivos, transformando ideias em resultados concretos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projetos -->
+  <section id="projetos" class="border-t border-zinc-200/60 dark:border-zinc-800/60">
+    <div class="max-w-6xl mx-auto px-4 py-16 md:py-20">
+      <div class="flex items-end justify-between gap-4">
+        <h2 class="text-2xl font-bold" data-i18n="projects.title">Projetos</h2>
+        <a href="https://github.com/jvsribeiro" target="_blank" class="text-sm link-slide" data-i18n="projects.view_all">ver todos</a>
+      </div>
+      <div class="mt-6 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- MenuPro -->
+        <article class="group p-5 rounded-2xl border border-zinc-200 dark:border-zinc-800 hover:shadow-soft transition">
+          <div class="flex items-start justify-between gap-3">
+          <h3 class="font-semibold group-hover:underline underline-offset-4" data-i18n="projects.menupro.title">MenuPro — Cardápio digital</h3>
+            <a href="https://menuproapp.com.br/" target="_blank" class="shrink-0 inline-flex items-center justify-center w-8 h-8 rounded-md border border-zinc-200 dark:border-zinc-800 hover:bg-zinc-50 dark:hover:bg-zinc-900" aria-label="Abrir site do MenuPro">
+              <span class="text-sm">↗</span>
+            </a>
+          </div>
+            <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-300" data-i18n="projects.menupro.desc">Menu PRO, cardápio digital para restaurantes, feito em PHP.</p>
+          <div class="mt-3 text-xs text-zinc-500">2024 — 2025</div>
+        </article>
+
+        <!-- Jogo da Memória (jvsribeiro) -->
+        <article class="group p-5 rounded-2xl border border-zinc-200 dark:border-zinc-800 hover:shadow-soft transition">
+          <div class="flex items-start justify-between gap-3">
+            <h3 class="font-semibold group-hover:underline underline-offset-4" data-i18n="projects.memory.title">Jogo da Memória — JavaScript</h3>
+            <a href="https://github.com/jvsribeiro/Jogo-da-memoria-js" target="_blank" class="shrink-0 inline-flex items-center justify-center w-8 h-8 rounded-md border border-zinc-200 dark:border-zinc-800 hover:bg-zinc-50 dark:hover:bg-zinc-900" aria-label="Ver no GitHub">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4"><path d="M12 .5A11.5 11.5 0 0 0 .5 12c0 5.08 3.29 9.38 7.86 10.9.58.12.79-.25.79-.56v-2.1c-3.2.7-3.87-1.36-3.87-1.36-.53-1.35-1.3-1.71-1.3-1.71-1.06-.73.08-.72.08-.72 1.18.08 1.8 1.21 1.8 1.21 1.04 1.79 2.73 1.27 3.4.97.11-.76.4-1.27.73-1.56-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.2-3.1-.12-.29-.52-1.45.11-3.02 0 0 .98-.31 3.2 1.18a11.1 11.1 0 0 1 5.83 0c2.22-1.49 3.2-1.18 3.2-1.18.63 1.57.23 2.73.11 3.02.75.81 1.2 1.84 1.2 3.1 0 4.43-2.7 5.41-5.27 5.7.41.35.77 1.03.77 2.07v3.07c0 .31.21.68.8.56A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5Z"/></svg>
+            </a>
+          </div>
+            <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-300" data-i18n="projects.memory.desc">Jogo da memória desenvolvido em JavaScript vanilla.</p>
+          <div class="mt-3 text-xs text-zinc-500">2025</div>
+        </article>
+
+        <!-- PRO-TCC (jvsribeiro) -->
+        <article class="group p-5 rounded-2xl border border-zinc-200 dark:border-zinc-800 hover:shadow-soft transition">
+          <div class="flex items-start justify-between gap-3">
+            <h3 class="font-semibold group-hover:underline underline-offset-4" data-i18n="projects.protcc.title">Procura pro (tcc)</h3>
+            <a href="https://github.com/jvsribeiro/procuraprotcc" target="_blank" class="shrink-0 inline-flex items-center justify-center w-8 h-8 rounded-md border border-zinc-200 dark:border-zinc-800 hover:bg-zinc-50 dark:hover:bg-zinc-900" aria-label="Ver no GitHub">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4"><path d="M12 .5A11.5 11.5 0 0 0 .5 12c0 5.08 3.29 9.38 7.86 10.9.58.12.79-.25.79-.56v-2.1c-3.2.7-3.87-1.36-3.87-1.36-.53-1.35-1.3-1.71-1.3-1.71-1.06-.73.08-.72.08-.72 1.18.08 1.8 1.21 1.8 1.21 1.04 1.79 2.73 1.27 3.4.97.11-.76.4-1.27.73-1.56-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.2-3.1-.12-.29-.52-1.45.11-3.02 0 0 .98-.31 3.2 1.18a11.1 11.1 0 0 1 5.83 0c2.22-1.49 3.2-1.18 3.2-1.18.63 1.57.23 2.73.11 3.02.75.81 1.2 1.84 1.2 3.1 0 4.43-2.7 5.41-5.27 5.7.41.35.77 1.03.77 2.07v3.07c0 .31.21.68.8.56A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5Z"/></svg>
+            </a>
+          </div>
+            <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-300" data-i18n="projects.protcc.desc">Repositório do projeto de TCC.</p>
+          <div class="mt-3 text-xs text-zinc-500">2025</div>
+        </article>
+
+        <!-- NeoTech Soluções (site) -->
+        <article class="group p-5 rounded-2xl border border-zinc-200 dark:border-zinc-800 hover:shadow-soft transition">
+          <div class="flex items-start justify-between gap-3">
+            <h3 class="font-semibold group-hover:underline underline-offset-4" data-i18n="projects.neotech.title">NeoTech Soluções — Organização</h3>
+            <a href="https://neotechsolucoes.com/" target="_blank" class="shrink-0 inline-flex items-center justify-center w-8 h-8 rounded-md border border-zinc-200 dark:border-zinc-800 hover:bg-zinc-50 dark:hover:bg-zinc-900" aria-label="Abrir site da NeoTech Soluções">
+              <span class="text-sm">↗</span>
+            </a>
+          </div>
+            <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-300" data-i18n="projects.neotech.desc">Acesse os repositórios e iniciativas da NeoTech Soluções.</p>
+            <div class="mt-3 text-xs text-zinc-500" data-i18n="projects.external_link">Link externo</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experiência -->
+  <section id="experiencia" class="border-t border-zinc-200/60 dark:border-zinc-800/60">
+    <div class="max-w-6xl mx-auto px-4 py-16 md:py-20">
+      <h2 class="text-2xl font-bold" data-i18n="experience.title">Experiência</h2>
+      <div class="mt-6 space-y-4">
+        <div class="p-5 rounded-2xl border border-zinc-200 dark:border-zinc-800">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <h3 class="font-semibold" data-i18n="exp.neotech.title">Sócio-fundador — NeoTech Soluções</h3>
+            <span class="text-xs text-zinc-500" data-i18n="exp.neotech.period">2023 — atual</span>
+          </div>
+          <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-300" data-i18n="exp.neotech.desc">Lidero projetos web full stack, definindo arquitetura, padrões de código, segurança (auth, RBAC, OWASP) e CI/CD.</p>
+        </div>
+
+        <div class="p-5 rounded-2xl border border-zinc-200 dark:border-zinc-800">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <h3 class="font-semibold" data-i18n="exp.zixbe2.title">Analista de Desenvolvimento Júnior II — Zixbe</h3>
+            <span class="text-xs text-zinc-500" data-i18n="exp.zixbe2.period">mar 2025 — set 2025 · 7 meses</span>
+          </div>
+          <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-300" data-i18n="exp.zixbe2.desc">Tempo integral. Comunicação, Microsoft Office e mais 21 competências.</p>
+        </div>
+
+        <div class="p-5 rounded-2xl border border-zinc-200 dark:border-zinc-800">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <h3 class="font-semibold" data-i18n="exp.zixbe1.title">Analista de Desenvolvimento Júnior I — Zixbe</h3>
+            <span class="text-xs text-zinc-500" data-i18n="exp.zixbe1.period">fev 2024 — mar 2025 · 1 ano 2 meses</span>
+          </div>
+          <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-300" data-i18n="exp.zixbe1.desc">Remota. GitHub, HTML e mais 10 competências.</p>
+        </div>
+
+        <div class="p-5 rounded-2xl border border-zinc-200 dark:border-zinc-800">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <h3 class="font-semibold" data-i18n="exp.sicoob.title">Suporte ao usuário — Sicoob Credicitrus (Estágio)</h3>
+            <span class="text-xs text-zinc-500" data-i18n="exp.sicoob.period">mar 2023 — fev 2024 · 1 ano</span>
+          </div>
+          <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-300" data-i18n="exp.sicoob.desc">Bebedouro, São Paulo, Brasil · Presencial. Comunicação e Microsoft Office.</p>
+        </div>
+
+        <div class="p-5 rounded-2xl border border-zinc-200 dark:border-zinc-800">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <h3 class="font-semibold" data-i18n="exp.linx.title">Analista de suporte — Linx</h3>
+            <span class="text-xs text-zinc-500" data-i18n="exp.linx.period">nov 2022 — mar 2023 · 5 meses</span>
+          </div>
+          <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-300" data-i18n="exp.linx.desc">Bebedouro, São Paulo, Brasil. Comunicação.</p>
+        </div>
+
+        <div class="p-5 rounded-2xl border border-zinc-200 dark:border-zinc-800">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <h3 class="font-semibold" data-i18n="exp.reis.title">Infraestrutura e suporte — Reis Advogados (Estágio)</h3>
+            <span class="text-xs text-zinc-500" data-i18n="exp.reis.period">mai 2022 — nov 2022 · 7 meses</span>
+          </div>
+          <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-300" data-i18n="exp.reis.desc">Bebedouro, São Paulo, Brasil. Comunicação.</p>
+        </div>
+
+        <div class="p-5 rounded-2xl border border-zinc-200 dark:border-zinc-800">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <h3 class="font-semibold" data-i18n="exp.pref.title">Suporte de T.I — Prefeitura de Bebedouro (Estágio)</h3>
+            <span class="text-xs text-zinc-500" data-i18n="exp.pref.period">dez 2021 — mai 2022 · 6 meses</span>
+          </div>
+          <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-300" data-i18n="exp.pref.desc">São Paulo, Brasil. Comunicação.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Formação acadêmica -->
+  <section id="formacao" class="border-t border-zinc-200/60 dark:border-zinc-800/60">
+    <div class="max-w-6xl mx-auto px-4 py-16 md:py-20">
+      <h2 class="text-2xl font-bold" data-i18n="education.title">Formação acadêmica</h2>
+      <div class="mt-6 space-y-4">
+        <div class="p-5 rounded-2xl border border-zinc-200 dark:border-zinc-800">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <h3 class="font-semibold" data-i18n="edu.ifsp.title">Pós-graduação (Lato Sensu) — IFSP</h3>
+            <span class="text-xs text-zinc-500" data-i18n="edu.ifsp.period">jul 2025 — dez 2026</span>
+          </div>
+          <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-300" data-i18n="edu.ifsp.course">Desenvolvimento de Sistemas para Internet e Dispositivos Móveis.</p>
+          <div class="mt-2 text-xs text-zinc-500" data-i18n="edu.ifsp.skills">Git, Banco de dados e mais 14 competências</div>
+        </div>
+
+        <div class="p-5 rounded-2xl border border-zinc-200 dark:border-zinc-800">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <h3 class="font-semibold" data-i18n="edu.unif.title">Bacharelado — UNIFAFIBE</h3>
+            <span class="text-xs text-zinc-500" data-i18n="edu.unif.period">jan 2021 — dez 2024</span>
+          </div>
+          <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-300" data-i18n="edu.unif.course">Sistemas de Informação.</p>
+        </div>
+
+        <div class="p-5 rounded-2xl border border-zinc-200 dark:border-zinc-800">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <h3 class="font-semibold" data-i18n="edu.cna.title">Inglês (Intermediário) — CNA</h3>
+            <span class="text-xs text-zinc-500" data-i18n="edu.cna.period">Concluído</span>
+          </div>
+          <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-300" data-i18n="edu.cna.course">Curso de inglês — nível intermediário.</p>
+        </div>
+      </div>
+      <div class="mt-6">
+        <a href="https://www.linkedin.com/in/joao-vitor-ribeiro-2a40511b7/details/certifications/" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-zinc-300 dark:border-zinc-700 hover:bg-zinc-50 dark:hover:bg-zinc-900 link-slide" data-i18n="education.view_certs">
+          Ver certificações no LinkedIn
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contato -->
+  <section id="contato" class="border-t border-zinc-200/60 dark:border-zinc-800/60">
+    <div class="max-w-6xl mx-auto px-4 py-16 md:py-20">
+      <h2 class="text-2xl font-bold" data-i18n="contact.title">Contato</h2>
+      <p class="mt-4 text-zinc-600 dark:text-zinc-300" data-i18n="contact.desc">Fale comigo para novas oportunidades e futuros projetos. Estou sempre à disposição de novos desafios.</p>
+      <div class="mt-6 grid gap-4">
+        <!-- Email -->
+        <article class="p-5 rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 shadow-soft">
+          <div class="flex items-start gap-4">
+            <span class="flex items-center justify-center w-12 h-12 rounded-full text-white bg-gradient-to-br from-sky-500 to-blue-600 shadow">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="w-5 h-5"><path d="M3 7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Z"/><path d="m3 7 9 6 9-6"/></svg>
+            </span>
+            <div>
+              <h3 class="font-semibold" data-i18n="contact.email.title">Email</h3>
+              <div class="mt-1 text-sm text-zinc-600 dark:text-zinc-300">joaovitorr0508@gmail.com</div>
+              <div class="mt-3 flex items-center gap-3">
+                <a href="mailto:joaovitorr0508@gmail.com" class="btn btn-sm" data-i18n="contact.email.send">Enviar Email</a>
+                <a href="#" id="btnCopyEmail" class="btn btn-sm" data-i18n="contact.email.copy">Copiar e-mail</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- WhatsApp -->
+        <article class="p-5 rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 shadow-soft">
+          <div class="flex items-start gap-4">
+            <span class="flex items-center justify-center w-12 h-12 rounded-full text-white bg-gradient-to-br from-emerald-500 to-teal-600 shadow">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.472-.149-.672.15-.198.297-.767.966-.94 1.164-.173.198-.347.223-.644.074-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.173.198-.297.298-.496.099-.198.05-.372-.025-.521-.075-.149-.672-1.611-.922-2.205-.242-.58-.487-.502-.672-.512l-.572-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.999-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.9 6.992c-.003 5.45-4.437 9.884-9.888 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.336.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.305-1.654a11.86 11.86 0 005.684 1.448h.005c6.554 0 11.89-5.336 11.893-11.893a11.82 11.82 0 00-3.473-8.413"/>
+              </svg>
+            </span>
+            <div>
+              <h3 class="font-semibold" data-i18n="contact.whatsapp.title">WhatsApp</h3>
+              <div class="mt-1 text-sm text-zinc-600 dark:text-zinc-300">+55 17 99106-6307</div>
+              <a href="https://wa.me/5517991066307?text=Ol%C3%A1%20Jo%C3%A3o!%20Vim%20pelo%20seu%20portf%C3%B3lio." target="_blank" class="mt-3 inline-flex btn btn-sm" data-i18n="contact.whatsapp.action">Conversar</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- LinkedIn -->
+        <article class="p-5 rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 shadow-soft">
+          <div class="flex items-start gap-4">
+            <span class="flex items-center justify-center w-12 h-12 rounded-full text-white bg-gradient-to-br from-sky-500 to-blue-700 shadow">
+              <i class="devicon-linkedin-plain text-xl" aria-hidden="true"></i>
+            </span>
+            <div>
+              <h3 class="font-semibold" data-i18n="contact.linkedin.title">LinkedIn</h3>
+              <div class="mt-1 text-sm text-zinc-600 dark:text-zinc-300">joao-vitor-ribeiro-2a40511b7</div>
+              <a href="https://www.linkedin.com/in/joao-vitor-ribeiro-2a40511b7/" target="_blank" class="mt-3 inline-flex btn btn-sm" data-i18n="contact.linkedin.action">Conectar</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- GitHub -->
+        <article class="p-5 rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 shadow-soft">
+          <div class="flex items-start gap-4">
+            <span class="flex items-center justify-center w-12 h-12 rounded-full text-white bg-gradient-to-br from-zinc-700 to-zinc-900 shadow">
+              <i class="devicon-github-original text-xl" aria-hidden="true"></i>
+            </span>
+            <div>
+              <h3 class="font-semibold" data-i18n="contact.github.title">GitHub</h3>
+              <div class="mt-1 text-sm text-zinc-600 dark:text-zinc-300">jvsribeiro</div>
+              <a href="https://github.com/jvsribeiro" target="_blank" class="mt-3 inline-flex btn btn-sm" data-i18n="contact.github.action">Ver Perfil</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-zinc-200/60 dark:border-zinc-800/60">
+    <div class="max-w-6xl mx-auto px-4 py-10 text-sm text-zinc-500 flex items-center justify-center">
+      <p>© <span id="year"></span> João Ribeiro. <span data-i18n="footer.rights">Todos os direitos reservados.</span></p>
+    </div>
+  </footer>
+
+  <!-- Back to top button -->
+  <button id="btnTop" aria-label="Voltar ao topo" class="fixed bottom-6 right-6 z-50 inline-flex items-center justify-center w-12 h-12 rounded-full border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 text-zinc-800 dark:text-zinc-100 shadow-soft transition-all duration-200 opacity-0 pointer-events-none hover:translate-y-[-2px]">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="w-5 h-5"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg>
+  </button>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

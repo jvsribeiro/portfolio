@@ -1,0 +1,68 @@
+/* Extracted from inline <style> in index.html */
+
+/* Typewriter caret */
+.caret::after { content: '▌'; animation: blink 1s steps(1) infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+
+/* Avatar animations */
+#avatar { animation: floatAvatar 8s ease-in-out infinite; transition: transform .25s ease, filter .25s ease; will-change: transform; }
+#avatarFrame { position: relative; }
+#avatarFrame::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  mix-blend-mode: soft-light;
+  background:
+    radial-gradient(140px 140px at var(--mx,50%) var(--my,50%), rgba(255,255,255,.18), transparent 55%),
+    linear-gradient(120deg, rgba(99,102,241,.10), rgba(16,185,129,.10), rgba(56,189,248,.10));
+  opacity: .65;
+  transition: opacity .3s ease;
+}
+#avatarFrame:hover::after { opacity: .95; }
+@keyframes floatAvatar { 0%, 100% { transform: translateY(0) } 50% { transform: translateY(-6px) } }
+
+/* Button system - consistent across the site */
+:root {
+  --btn-bg: #ffffff;
+  --btn-fg: #18181b;
+  --btn-border: #e5e7eb;
+  --btn-hover: #f4f4f5;
+  --btn-primary-bg: #18181b;
+  --btn-primary-fg: #ffffff;
+}
+.dark {
+  --btn-bg: rgba(24,24,27,1);
+  --btn-fg: #fafafa;
+  --btn-border: #27272a;
+  --btn-hover: #1f1f23;
+  --btn-primary-bg: #fafafa;
+  --btn-primary-fg: #111113;
+}
+.btn {
+  display: inline-flex; align-items: center; gap: .5rem;
+  padding: .5rem 1rem; border-radius: .75rem; border: 1px solid var(--btn-border);
+  background: var(--btn-bg); color: var(--btn-fg); text-decoration: none; line-height: 1.25rem;
+  transition: background-color .2s ease, transform .15s ease, box-shadow .2s ease, color .2s ease;
+  box-shadow: 0 1px 1.5px rgba(0,0,0,.03);
+}
+.btn:hover { background: var(--btn-hover); transform: translateY(-1px); }
+.btn:active { transform: translateY(0); }
+.btn-primary {
+  border-color: transparent; background: var(--btn-primary-bg); color: var(--btn-primary-fg);
+}
+.btn-primary:hover { filter: brightness(1.02); }
+.btn-sm { padding: .375rem .75rem; border-radius: .625rem; font-size: .875rem; }
+.btn-icon { width: 1rem; height: 1rem; }
+
+/* Sliding underline on hover for text links */
+.link-slide { position: relative; text-decoration: none; }
+.link-slide::after {
+  content: '';
+  position: absolute; left: 0; right: 0; bottom: -2px; height: 2px;
+  background: currentColor; opacity: .85; transform: scaleX(0); transform-origin: 0 50%;
+  transition: transform .22s ease;
+}
+.link-slide:hover::after { transform: scaleX(1); }
+
+
